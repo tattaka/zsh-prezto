@@ -10,9 +10,6 @@
 [submodule "modules/mime-setup"]
 	path = modules/mime-setup
 	url = https://github.com/chauncey-garrett/zsh-mime-setup.git
-[submodule "modules/prompt/functions/external/zsh-prompt-garrett"]
-	path = modules/prompt/functions/external/zsh-prompt-garrett
-	url = https://github.com/chauncey-garrett/zsh-prompt-garrett.git
 [submodule "modules/prompt/external/powerline"]
 	path = modules/prompt/external/powerline
 	url = https://github.com/davidjrice/prezto_powerline.git
@@ -22,3 +19,6 @@
 [submodule "modules/prompt/functions/pure"]
 	path = modules/prompt/external/pure
 	url = https://github.com/sindresorhus/pure.git
+[submodule "modules/prompt/external/garrett"]
+	path = modules/prompt/external/garrett
+	url = https://github.com/chauncey-garrett/zsh-prompt-garrett.git

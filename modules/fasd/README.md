@@ -16,7 +16,6 @@ Aliases
 -------
 
   - `j` changes the current working directory interactively.
-  - `v` Mimics rupa/v: opens the file with vim using viminfo backend.
 
 Completion
 ----------

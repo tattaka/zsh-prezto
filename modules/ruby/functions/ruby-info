@@ -17,7 +17,12 @@ typeset -gA ruby_info
 if (( $+commands[rvm-prompt] )); then
   version="$(rvm-prompt)"
 elif (( $+commands[rbenv] )); then
-  version="$(rbenv version-name)"
+  local rbenv_version="$(rbenv version-name)"
+  if [[ "$rbenv_version" == "system" ]]; then
+    version=""
+  else
+    version="$rbenv_version"
+  fi
 elif (( $+commands[ruby] )); then
   version="${${$(ruby --version)[(w)1,(w)2]}/ /-}"
 fi

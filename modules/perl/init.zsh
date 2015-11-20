@@ -10,6 +10,11 @@ if (( ! $+commands[perl] )); then
   return 1
 fi
 
+# Load Perlbrew into the shell session.
+if [[ -s "$HOME/perl5/perlbrew/etc/bashrc" ]]; then
+	source "$HOME/perl5/perlbrew/etc/bashrc"
+fi
+
 #
 # Local Module Installation
 #
@@ -41,12 +46,14 @@ alias pld='perldoc'
 alias ple='perl -wlne'
 
 # Perlbrew
-alias plb='perlbrew'
-alias plba='perlbrew available'
-alias plbi='perlbrew install'
-alias plbl='perlbrew list'
-alias plbo='perlbrew off'
-alias plbO='perlbrew switch-off'
-alias plbs='perlbrew switch'
-alias plbu='perlbrew use'
-alias plbx='perlbrew uninstall'
+if (( $+commands[perlbrew] )); then
+  alias plb='perlbrew'
+  alias plba='perlbrew available'
+  alias plbi='perlbrew install'
+  alias plbl='perlbrew list'
+  alias plbo='perlbrew off'
+  alias plbO='perlbrew switch-off'
+  alias plbs='perlbrew switch'
+  alias plbu='perlbrew use'
+  alias plbx='perlbrew uninstall'
+fi

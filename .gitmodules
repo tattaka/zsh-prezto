@@ -27,4 +27,4 @@
 	url = https://github.com/tarruda/zsh-autosuggestions
 [submodule "modules/autoenv"]
 	path = modules/autoenv
-	url = git@github.com:chauncey-garrett/zsh-autoenv.git
+	url = https://github.com/chauncey-garrett/zsh-autoenv.git

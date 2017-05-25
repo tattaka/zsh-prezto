@@ -1,3 +1,4 @@
+
 #
 # Enables local Perl module installation on Mac OS X and defines aliases.
 #
@@ -10,9 +11,27 @@ if (( ! $+commands[perl] )); then
   return 1
 fi
 
+#
+# Load Perlbrew or plenv
+#
+
 # Load Perlbrew into the shell session.
-if [[ -s "$HOME/perl5/perlbrew/etc/bashrc" ]]; then
-	source "$HOME/perl5/perlbrew/etc/bashrc"
+if [[ -s "${PERLBREW_ROOT:-$HOME/perl5/perlbrew}/etc/bashrc" ]]; then
+  source "${PERLBREW_ROOT:-$HOME/perl5/perlbrew}/etc/bashrc"
+
+  # Load Perlbrew completion.
+  if [[ -s "${PERLBREW_ROOT:-$HOME/perl5/perlbrew}/etc/perlbrew-completion.bash" ]]; then
+    source "${PERLBREW_ROOT:-$HOME/perl5/perlbrew}/etc/perlbrew-completion.bash"
+  fi
+
+# Load manually installed plenv into the shell session.
+elif [[ -s "$HOME/.plenv/bin/plenv" ]]; then
+  path=("$HOME/.plenv/bin" $path)
+  eval "$(plenv init - --no-rehash zsh)"
+
+# Load package manager installed plenv into the shell session.
+elif (( $+commands[plenv] )); then
+  eval "$(plenv init - --no-rehash zsh)"
 fi
 
 #
@@ -56,4 +75,21 @@ if (( $+commands[perlbrew] )); then
   alias plbs='perlbrew switch'
   alias plbu='perlbrew use'
   alias plbx='perlbrew uninstall'
+
+elif (( $+commands[plenv] )); then
+  alias plv='plenv'
+  alias plvc='plenv commands'
+  alias plvl='plenv local'
+  alias plvg='plenv global'
+  alias plvs='plenv shell'
+  alias plvi='plenv install'
+  alias plvu='plenv uninstall'
+  alias plvr='plenv rehash'
+  alias plvv='plenv version'
+  alias plvV='plenv versions'
+  alias plvw='plenv which'
+  alias plvW='plenv whence'
+  alias plvm='plenv list-modules'
+  alias plvM='plenv migrate-modules'
+  alias plvI='plenv install-cpanm'
 fi

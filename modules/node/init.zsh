@@ -20,7 +20,7 @@ elif [[ -s "$HOME/.nodenv/bin/nodenv" ]]; then
   eval "$(nodenv init - --no-rehash zsh)"
 
 # Load package manager installed nodenv into the shell session.
-elif (( $+commands[brew] )) && [[ -d "$(brew --prefix nodenv 2>/dev/null)" ]]; then
+elif (( $+commands[nodenv] )); then
   eval "$(nodenv init - --no-rehash zsh)"
 
 # Return if requirements are not found.

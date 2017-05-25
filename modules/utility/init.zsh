@@ -51,6 +51,7 @@ alias _='sudo'
 alias ag="${aliases[ag]:-ag} --color-match 35"
 alias b='${(z)BROWSER}'
 alias cp="${aliases[cp]:-cp} -i"
+alias diffu="diff --unified"
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
 alias ln="${aliases[ln]:-ln} -i"
 alias mkdir="${aliases[mkdir]:-mkdir} -p"
@@ -59,6 +60,7 @@ alias p='${(z)PAGER}'
 alias po='popd'
 alias pu='pushd'
 alias rm="${aliases[rm]:-rm} -i"
+alias sa='alias | grep -i'
 alias type='type -a'
 
 # ls
@@ -144,7 +146,12 @@ elif (( $+commands[wget] )); then
 fi
 
 # Resource Usage
-alias df='df -kh'
+if (( $+commands[pydf] )); then
+  alias df=pydf
+else
+  alias df='df -kh'
+fi
+
 alias du='du -kh'
 
 if (( $+commands[htop] )); then
@@ -162,7 +169,11 @@ fi
 # Miscellaneous
 
 # Serves a directory via HTTP.
-alias http-serve='python -m SimpleHTTPServer'
+if (( $+commands[python3] )); then
+  alias http-serve='python3 -m http.server'
+else
+  alias http-serve='python -m SimpleHTTPServer'
+fi
 
 #
 # Functions

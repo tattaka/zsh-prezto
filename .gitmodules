@@ -1,3 +1,9 @@
+[submodule "modules/autoenv"]
+	path = modules/autoenv
+	url = https://github.com/chauncey-garrett/zsh-autoenv.git
+[submodule "modules/autosuggestions/external"]
+	path = modules/autosuggestions/external
+	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "modules/history-substring-search/external"]
 	path = modules/history-substring-search/external
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
@@ -22,9 +28,3 @@
 [submodule "modules/prompt/external/garrett"]
 	path = modules/prompt/external/garrett
 	url = https://github.com/chauncey-garrett/zsh-prompt-garrett.git
-[submodule "modules/autosuggestions/external"]
-	path = modules/autosuggestions/external
-	url = https://github.com/tarruda/zsh-autosuggestions
-[submodule "modules/autoenv"]
-	path = modules/autoenv
-	url = https://github.com/chauncey-garrett/zsh-autoenv.git

@@ -1,0 +1,5 @@
+modules/autosuggestions/external
+modules/completion/external
+modules/history-substring-search/external
+modules/prompt/external
+modules/syntax-highlighting/external

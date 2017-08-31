@@ -51,8 +51,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
     source "$cache_file"
   fi
 
-  unset perl_path
-  unset cache_file
+  unset cache_file perl_path
 fi
 
 #

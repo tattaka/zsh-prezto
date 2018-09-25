@@ -24,7 +24,7 @@
 	url = https://github.com/agnoster/agnoster-zsh-theme.git
 [submodule "modules/prompt/external/garrett"]
 	path = modules/prompt/external/garrett
-	url = https://github.com/chauncey-garrett/zsh-prompt-garrett.git
+	url = https://github.com/tattaka/zsh-prompt-garrett.git
 [submodule "modules/prompt/functions/pure"]
 	path = modules/prompt/external/pure
 	url = https://github.com/sindresorhus/pure.git
